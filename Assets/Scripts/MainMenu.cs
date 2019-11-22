@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-
-    GameObject options;
-    GameObject credits;
-    GameObject mainMenu;
-
-    void Start()
-    {
-        options = GameObject.Find("Options");
-        credits = GameObject.Find("Credits");
-        mainMenu = GameObject.Find("MainMenu");
-    }
+    [Header("Canvases")]
+    public GameObject options;
+    public GameObject credits;
+    public GameObject mainMenu;
+    [Header("Buttons")]
+    public Button creditsBackButton;
+    public Button optionsBackButton;
+    public Button startGameButton;
+    [Header("Sounds")]
+    public AudioSource SelectEffect;
+    public AudioSource ButtonSoundEffect;
 
     public void StartGame()
     {
@@ -26,17 +27,23 @@ public class MainMenu : MonoBehaviour
     {
         mainMenu.SetActive(false);
         options.SetActive(true);
+
+        optionsBackButton.Select();
+        PlaySelectSound();
     }
 
     public void CreditsScreen()
     {
         mainMenu.SetActive(false);
         credits.SetActive(true);
+
+        creditsBackButton.Select();
+        PlaySelectSound();
     }
 
     public void ExitGame()
     {
-        ExitGame();
+        Application.Quit();
         print("Exited Game");
     }
 
@@ -45,6 +52,23 @@ public class MainMenu : MonoBehaviour
         options.SetActive(false);
         credits.SetActive(false);
         mainMenu.SetActive(true);
+
+        startGameButton.Select();
+        PlaySelectSound();
     }
 
+    public void PlaySelectSound()
+    {
+        SelectEffect.Play();
+    }
+
+    public void PlayButtonSound()
+    {
+        ButtonSoundEffect.Play();
+    }
+
+    public void PlayShakeAnimation()
+    {
+        
+    }
 }
