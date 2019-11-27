@@ -24,7 +24,7 @@ public class camera : MonoBehaviour
 
     void cameraLerpToPlayer()
     {
-        var playerPos = new Vector3(playerLocation.position.x + 8, 8, playerLocation.position.z + 2);
+        var playerPos = new Vector3(playerLocation.position.x -12, 12, playerLocation.position.z - 7);
 
         cameraLocation.position = Vector3.Lerp(cameraLocation.position, playerPos, lerpTVariable);
     }
