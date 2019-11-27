@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
 
     //variables
     public float moveSpeed = 5;
+    public float rotationSpeed = 10;
 
     void Start()
     {
@@ -17,11 +18,11 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Thrust"))
+        if (Input.GetButton("Thrust"))
         {
-            rb.velocity = transform.forward * moveSpeed;
+            rb.AddForce(moveSpeed * transform.forward, ForceMode.Acceleration);
         }
 
-
+        transform.Rotate(Vector3.up, 3 * Input.GetAxis("Horizontal"));
     }
 }
