@@ -10,17 +10,23 @@ public class MainMenu : MonoBehaviour
     public GameObject options;
     public GameObject credits;
     public GameObject mainMenu;
+    public GameObject loadingScreen;
     [Header("Buttons")]
     public Button creditsBackButton;
     public Button optionsBackButton;
     public Button startGameButton;
+    public Slider loadingBar;
     [Header("Sounds")]
     public AudioSource SelectEffect;
     public AudioSource ButtonSoundEffect;
 
-    public void StartGame()
+    public Animator buttonShake;
+
+    public void StartGame(int sceneIndex)
     {
-        SceneManager.LoadScene(1);
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        StartCoroutine(LoadLevelAsync(sceneIndex));
     }
 
     public void OptionsScreen()
@@ -67,8 +73,22 @@ public class MainMenu : MonoBehaviour
         ButtonSoundEffect.Play();
     }
 
-    public void PlayShakeAnimation()
+    IEnumerator LoadLevelAsync(int sceneIndex)
     {
-        
+        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(sceneIndex);
+
+        mainMenu.SetActive(false);
+        loadingScreen.SetActive(true);
+
+        while (!loadOperation.isDone)
+        {
+            float progress = Mathf.Clamp01(loadOperation.progress / .9f);
+            Debug.Log(progress);
+
+            loadingBar.value = progress;
+
+            yield return null;
+        }
     }
+
 }
