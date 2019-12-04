@@ -491,6 +491,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9d27500f6dcbd4eb4d6b372d6faa3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targets:
+  - {fileID: 803759944}
+  - {fileID: 320471838}
+  offset: {x: 0, y: 0, z: 0}
+  smoothTime: 0.5
+  maxZoom: 100
+  minZoom: 400
+  zoomLimiter: 800
 --- !u!1 &320471833
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +511,6 @@ GameObject:
   - component: {fileID: 320471837}
   - component: {fileID: 320471836}
   - component: {fileID: 320471835}
-  - component: {fileID: 320471834}
   m_Layer: 0
   m_Name: Tonk (1)
   m_TagString: Player2
@@ -511,18 +518,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &320471834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320471833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7189ffaa8b62ad045bf7e740b91dcf42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &320471835
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -795,7 +790,6 @@ GameObject:
   - component: {fileID: 803759943}
   - component: {fileID: 803759942}
   - component: {fileID: 803759941}
-  - component: {fileID: 803759945}
   m_Layer: 0
   m_Name: Tonk
   m_TagString: Player
@@ -879,18 +873,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &803759945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 803759940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7189ffaa8b62ad045bf7e740b91dcf42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &946804271
 GameObject:
   m_ObjectHideFlags: 0

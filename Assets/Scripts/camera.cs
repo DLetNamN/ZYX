@@ -54,7 +54,6 @@ public class camera : MonoBehaviour
         {
             bounds.Encapsulate(targets[i].position);
         }
-
         return bounds.size.x;
     }
 
@@ -66,13 +65,10 @@ public class camera : MonoBehaviour
         }
 
         var bounds = new Bounds(targets[0].position, Vector3.zero);
-        for (int targetInt; targetInt < targets.Count; targetInt++)
+        for (int i; i < targets.Count; i++)
         {
-            bounds.Encapsulate(targets[targetInt].position);
+            bounds.Encapsulate(targets[i].position);
         }
-
         return bounds.center;
     }
-
-    //credit to Brackeys because I'm not good at game dev ;)
 }
