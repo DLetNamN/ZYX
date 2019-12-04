@@ -20,7 +20,6 @@ public class MainMenu : MonoBehaviour
     public AudioSource SelectEffect;
     public AudioSource ButtonSoundEffect;
 
-    public Animator buttonShake;
 
     public void StartGame(int sceneIndex)
     {
