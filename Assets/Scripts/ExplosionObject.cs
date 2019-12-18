@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class ExplosionObject : MonoBehaviour
 {
+    public ParticleSystem explosionParticles;
+
+    private void Start()
+    {
+        explosionParticles.Play();
+    }
+
     // Update is called once per frame
     void Update()
     {
