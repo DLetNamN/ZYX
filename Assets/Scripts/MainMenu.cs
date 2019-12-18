@@ -20,7 +20,6 @@ public class MainMenu : MonoBehaviour
     public AudioSource SelectEffect;
     public AudioSource ButtonSoundEffect;
 
-
     public void StartGame(int sceneIndex)
     {
         Scene currentScene = SceneManager.GetActiveScene();
@@ -89,5 +88,4 @@ public class MainMenu : MonoBehaviour
             yield return null;
         }
     }
-
 }
