@@ -11,12 +11,16 @@ public class Shoot : MonoBehaviour
     {
         if (Input.GetButton("Shoot"))
         {
-            Force *= Time.deltaTime;
+            Force *= Time.deltaTime * 60;
+        }
+        else
+        {
+            Force = 1;
         }
 
         if (Input.GetButtonUp("Shoot"))
         {
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            Instantiate(bullet, new Vector3(transform.position.x, transform.position.y + 3, transform.position.z), Quaternion.identity);
         }
     }
 }
