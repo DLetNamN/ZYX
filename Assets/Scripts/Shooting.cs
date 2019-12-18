@@ -21,11 +21,11 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        chargeTime = Mathf.Clamp(chargeTime, 0, 3);
+
         if (Input.GetButtonDown("Fire1"))
         {
             chargeSound.Play();
-            if (chargeTime >= 3)
-                chargeTime = 3;
         }
 
         if (Input.GetButton("Fire1"))
