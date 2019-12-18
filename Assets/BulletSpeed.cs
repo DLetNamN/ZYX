@@ -11,7 +11,7 @@ public class BulletSpeed : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         rb.AddForce(GameObject.Find("AAT").GetComponent<Shoot>().Force * transform.forward, ForceMode.Impulse);
     }
