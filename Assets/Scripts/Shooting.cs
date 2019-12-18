@@ -12,6 +12,8 @@ public class Shooting : MonoBehaviour
     [SerializeField] AudioSource chargeSound;
     [SerializeField] Animator chargingAnim;
 
+    public Transform bulletSpawnpoint;
+
     // Update is called once per frame
     void Update()
     {
@@ -20,8 +22,10 @@ public class Shooting : MonoBehaviour
             chargeTime += Time.deltaTime;
             chargeSound.pitch = chargeTime;
         }
-        
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            Instantiate(bulletObject, bulletSpawnpoint.position, Quaternion.identity);
+        }
     }
-
-
 }

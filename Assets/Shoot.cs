@@ -7,16 +7,18 @@ public class Shoot : MonoBehaviour
     public float Force;
     public GameObject bullet;
 
+    public Transform bulletSpawnpoint;
+
     void Update()
     {
-        if (Input.GetButton("Shoot"))
+        if (Input.GetButton("Fire1"))
         {
             Force *= Time.deltaTime;
         }
 
-        if (Input.GetButtonUp("Shoot"))
+        if (Input.GetButtonUp("Fire1"))
         {
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            Instantiate(bullet, bulletSpawnpoint.position, Quaternion.identity);
         }
     }
 }
