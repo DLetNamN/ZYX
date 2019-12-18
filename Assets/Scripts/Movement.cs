@@ -24,6 +24,6 @@ public class Movement : MonoBehaviour
             rb.AddForce(moveSpeed * transform.forward, ForceMode.Acceleration);
         }
 
-        ct.Rotate(Vector3.up, 3 * Input.GetAxis("Horizontal"));
+        ct.Rotate(Vector3.up, rotationSpeed * Input.GetAxis("Horizontal"));
     }
 }
