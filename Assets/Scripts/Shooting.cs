@@ -9,7 +9,7 @@ public class Shooting : MonoBehaviour
 
     [Header("Charging")]
     [SerializeField] float chargeTime;
-    [SerializeField] float forceMultiplier;
+    public float forceMultiplier;
 
     [Header("Animations and Sounds")]
     [SerializeField] AudioSource chargeSound;
@@ -34,11 +34,13 @@ public class Shooting : MonoBehaviour
 
             chargeTime += Time.deltaTime;
             chargeSound.pitch = chargeTime;
+
+            forceMultiplier = chargeTime;
         }
 
         if (Input.GetButtonUp("Fire1"))
         {
-            Instantiate(bulletObject, bulletSpawnpoint.position, Quaternion.identity);
+            Instantiate(bulletObject, bulletSpawnpoint.position, bulletSpawnpoint.rotation);
 
             chargeTime = 0;
             chargeSound.Stop();

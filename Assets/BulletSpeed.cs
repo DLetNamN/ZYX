@@ -5,14 +5,25 @@ using UnityEngine;
 public class BulletSpeed : MonoBehaviour
 {
     private Rigidbody rb;
+
+    public GameObject explosionObject;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        GameObject player = GameObject.FindWithTag("Player");
+        Shooting shoot = player.GetComponent<Shooting>();
+
+        rb.velocity = transform.forward * shoot.forceMultiplier * 1000;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void OnCollisionEnter(Collision collision)
     {
-        rb.AddForce(GameObject.Find("AAT").GetComponent<Shoot>().Force * transform.forward, ForceMode.Impulse);
+       if(collision.gameObject.tag == "Wall")
+        {
+            Instantiate(explosionObject);
+            Destroy(gameObject);
+        }
     }
 }
