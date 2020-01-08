@@ -14,6 +14,8 @@ public class camera : MonoBehaviour
     public float maxZoom = 275f;
     public float minZoom = 1.65f;
 
+    public float zoomLimit = 50f;
+
     float targetDist;
 
     private Camera cam;
@@ -28,7 +30,7 @@ public class camera : MonoBehaviour
             return;
 
         Move();
-        Zoom();
+        Zomm();
         Dist();
     }
 
@@ -37,12 +39,12 @@ public class camera : MonoBehaviour
         targetDist = Vector3.Distance(targets[0].position, targets[1].position);
     }
 
-    void Zoom()
+    void Zomm()
     {
         if (targets.Count == 0)
             return;
 
-        float newZoom = Mathf.Lerp(minZoom, maxZoom, targetDist / 50f) / 5f;
+        float newZoom = Mathf.Lerp(minZoom, maxZoom, targetDist / zoomLimit);
 
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, newZoom, Time.deltaTime);
     }
