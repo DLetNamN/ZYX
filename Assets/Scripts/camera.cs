@@ -37,6 +37,7 @@ public class camera : MonoBehaviour
     private void Dist()
     {
         targetDist = Vector3.Distance(targets[0].position, targets[1].position);
+
     }
 
     void Zomm()
