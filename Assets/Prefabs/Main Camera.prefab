@@ -100,7 +100,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   offset: {x: -61.3, y: 59.8, z: -35.2}
-  smoothTime: 0.5
+  smoothTime: 0
   maxZoom: 275
   minZoom: 1.65
   zoomLimit: 1000
