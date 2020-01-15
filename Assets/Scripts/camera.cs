@@ -23,8 +23,10 @@ public class camera : MonoBehaviour
     private void Start()
     {
         cam = GetComponent<Camera>();
+
+        cam.orthographicSize = 10;
     }
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         if (targets.Count == 0)
             return;
