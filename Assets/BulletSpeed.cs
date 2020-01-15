@@ -8,11 +8,13 @@ public class BulletSpeed : MonoBehaviour
 
     public GameObject explosionObject;
 
+    public string playerNumber;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
-        GameObject player = GameObject.FindWithTag("Player");
+        GameObject player = GameObject.FindWithTag("Player" + playerNumber);
         Shooting shoot = player.GetComponent<Shooting>();
 
         rb.velocity = transform.forward * shoot.forceMultiplier * 1000;
