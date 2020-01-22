@@ -6,31 +6,39 @@ using UnityEngine;
 public class HP : MonoBehaviour
 {
     //player identification
-    int p_int;
+    [SerializeField] int p_int;
     string p_t_name;
 
     //player medical
     [SerializeField] int p_hp;
     [SerializeField] int p_dmg;
 
+    public string a_s_n;
+
     private void Start()
     {
+        playerConfig();
+    }
+
+    private void playerConfig()
+    {
         p_t_name = this.gameObject.tag;
-        p_int = p_t_name[6];
 
         if (p_int != 1)
         {
             p_int -= 1;
-        } 
+        }
         else
         {
             p_int += 1;
         }
+
+        a_s_n = "AAt_Shot " + p_int;
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.name == "AAt_Shot " + p_int)
+        if (collider.gameObject.name == a_s_n)
         {
             p_hp -= p_dmg; 
         }
@@ -38,14 +46,7 @@ public class HP : MonoBehaviour
 
     private void Update()
     {
-        deathConditions();
+        
     }
 
-    private void deathConditions()
-    {
-        if(p_hp <= 0)
-        {
-            Destroy(this.gameObject);
-        }
-    }
 }
