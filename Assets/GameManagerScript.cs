@@ -22,7 +22,6 @@ public class GameManagerScript : MonoBehaviour
     private void Start()
     {
         mainGameTimer = 300;
-
     }
 
     private void Awake()
@@ -78,6 +77,10 @@ public class GameManagerScript : MonoBehaviour
             else if (player2HP < player1HP)
             {
                 playerWhoWon = "1";
+            }
+            else if (player1HP == player2HP)
+            {
+                playerWhoWon = "";
             }
 
             SceneManager.LoadScene(2);
