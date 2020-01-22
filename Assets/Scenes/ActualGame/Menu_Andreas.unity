@@ -596,7 +596,6 @@ GameObject:
   - component: {fileID: 164155371}
   - component: {fileID: 164155374}
   - component: {fileID: 164155375}
-  - component: {fileID: 164155376}
   m_Layer: 5
   m_Name: CreditsButton
   m_TagString: Untagged
@@ -746,7 +745,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 164155376}
+        - m_Target: {fileID: 0}
           m_MethodName: Shake
           m_Mode: 1
           m_Arguments:
@@ -778,19 +777,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &164155376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164155369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d257f5916fd8f54ebae5a8f80b8cfb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
 --- !u!1 &177737586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2259,7 +2245,6 @@ GameObject:
   - component: {fileID: 521493889}
   - component: {fileID: 521493892}
   - component: {fileID: 521493893}
-  - component: {fileID: 521493894}
   m_Layer: 5
   m_Name: OptionsBackButton
   m_TagString: Untagged
@@ -2409,7 +2394,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 521493894}
+        - m_Target: {fileID: 0}
           m_MethodName: Shake
           m_Mode: 1
           m_Arguments:
@@ -2441,19 +2426,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &521493894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521493887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d257f5916fd8f54ebae5a8f80b8cfb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
 --- !u!1 &624029266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2890,6 +2862,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &908977914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 908977916}
+  - component: {fileID: 908977915}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &908977915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908977914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbcb43c4e7310a246b5def1937343c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScene: 0
+  gameManager: []
+  mainGameTimer: 0
+  playerWhoWon: 
+  player1HP: 0
+  player2HP: 0
+--- !u!4 &908977916
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908977914}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &912707138
 GameObject:
   m_ObjectHideFlags: 0
@@ -3159,7 +3180,6 @@ GameObject:
   - component: {fileID: 1063380493}
   - component: {fileID: 1063380496}
   - component: {fileID: 1063380497}
-  - component: {fileID: 1063380498}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -3309,7 +3329,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1063380498}
+        - m_Target: {fileID: 0}
           m_MethodName: Shake
           m_Mode: 1
           m_Arguments:
@@ -3341,19 +3361,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1063380498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063380491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d257f5916fd8f54ebae5a8f80b8cfb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
 --- !u!1 &1069718797
 GameObject:
   m_ObjectHideFlags: 0
@@ -3906,7 +3913,6 @@ GameObject:
   - component: {fileID: 1341450844}
   - component: {fileID: 1341450847}
   - component: {fileID: 1341450848}
-  - component: {fileID: 1341450849}
   m_Layer: 5
   m_Name: StartGameButton
   m_TagString: Untagged
@@ -4056,7 +4062,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1341450849}
+        - m_Target: {fileID: 0}
           m_MethodName: Shake
           m_Mode: 1
           m_Arguments:
@@ -4088,19 +4094,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1341450849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1341450842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d257f5916fd8f54ebae5a8f80b8cfb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
 --- !u!1 &1443345481
 GameObject:
   m_ObjectHideFlags: 0
@@ -5900,7 +5893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
+  m_HorizontalAxis: Horizontal1
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
   m_CancelButton: Cancel
@@ -6109,7 +6102,6 @@ GameObject:
   - component: {fileID: 1910925759}
   - component: {fileID: 1910925761}
   - component: {fileID: 1910925760}
-  - component: {fileID: 1910925762}
   m_Layer: 5
   m_Name: CreditsBackButton
   m_TagString: Untagged
@@ -6289,7 +6281,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1910925762}
+        - m_Target: {fileID: 0}
           m_MethodName: Shake
           m_Mode: 1
           m_Arguments:
@@ -6321,19 +6313,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1910925762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910925754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d257f5916fd8f54ebae5a8f80b8cfb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
 --- !u!1 &1922218265
 GameObject:
   m_ObjectHideFlags: 0
@@ -7073,7 +7052,6 @@ GameObject:
   - component: {fileID: 2127755843}
   - component: {fileID: 2127755846}
   - component: {fileID: 2127755847}
-  - component: {fileID: 2127755848}
   m_Layer: 5
   m_Name: OptionsButton
   m_TagString: Untagged
@@ -7223,7 +7201,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 2127755848}
+        - m_Target: {fileID: 0}
           m_MethodName: Shake
           m_Mode: 1
           m_Arguments:
@@ -7255,16 +7233,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2127755848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2127755841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d257f5916fd8f54ebae5a8f80b8cfb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
