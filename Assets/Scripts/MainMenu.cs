@@ -20,12 +20,16 @@ public class MainMenu : MonoBehaviour
     public AudioSource SelectEffect;
     public AudioSource ButtonSoundEffect;
 
-
     public void StartGame(int sceneIndex)
     {
         Scene currentScene = SceneManager.GetActiveScene();
 
         StartCoroutine(LoadLevelAsync(sceneIndex));
+
+        GameObject sceneManager = GameObject.FindWithTag("GameController");
+        GameManagerScript gameScript = sceneManager.GetComponent<GameManagerScript>();
+
+        gameScript.mainGameTimer = 300;
     }
 
     public void OptionsScreen()
@@ -89,5 +93,4 @@ public class MainMenu : MonoBehaviour
             yield return null;
         }
     }
-
 }

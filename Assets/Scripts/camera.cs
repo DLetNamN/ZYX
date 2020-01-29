@@ -4,28 +4,77 @@ using UnityEngine;
 
 public class camera : MonoBehaviour
 {
-    //
-    private Transform playerLocation;
-    private Transform cameraLocation;
+    public List<Transform> targets;
 
-    //Configurable
-    public float lerpTVariable = 1;
+    public Vector3 offset = new Vector3(-6.6f, 6.8f, -4.8f);
 
-    void Start()
+    private Vector3 velocity;
+    public float smoothTime = .5f;
+
+    public float maxZoom = 275f;
+    public float minZoom = 1.65f;
+
+    public float zoomLimit = 50f;
+
+    float targetDist;
+
+    private Camera cam;
+
+    private void Start()
     {
-        playerLocation = GameObject.FindWithTag("Player").transform;
-        cameraLocation = gameObject.GetComponent<Transform>();
+        cam = GetComponent<Camera>();
+
+        cam.orthographicSize = 10;
+    }
+    private void FixedUpdate()
+    {
+        if (targets.Count == 0)
+            return;
+
+        Move();
+        Zomm();
+        Dist();
     }
 
-    void Update()
+    private void Dist()
     {
-        cameraLerpToPlayer();    
+        targetDist = Vector3.Distance(targets[0].position, targets[1].position);
+
     }
 
-    void cameraLerpToPlayer()
+    void Zomm()
     {
-        var playerPos = new Vector3(playerLocation.position.x -12, 12, playerLocation.position.z - 7);
+        if (targets.Count == 0)
+            return;
 
-        cameraLocation.position = Vector3.Lerp(cameraLocation.position, playerPos, lerpTVariable);
+        float newZoom = Mathf.Lerp(minZoom, maxZoom, targetDist / zoomLimit);
+
+        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, newZoom, Time.deltaTime);
+    }
+
+    void Move()
+    {
+        Vector3 centerPoint = GetCenterPoint();
+
+        Vector3 newPosition = centerPoint + offset;
+
+        transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
+    }
+
+    Vector3 GetCenterPoint()
+    {
+        if (targets.Count == 1)
+        {
+            return targets[0].position;
+        }
+
+        var bounds = new Bounds(targets[0].position, Vector3.zero);
+
+        for (int targetsAmount = 0; targetsAmount < targets.Count; targetsAmount++)
+        {
+            bounds.Encapsulate(targets[targetsAmount].position);
+        }
+
+        return bounds.center;
     }
 }
