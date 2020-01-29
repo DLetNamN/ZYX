@@ -13,7 +13,7 @@ public class HP : MonoBehaviour
     [SerializeField] int p_hp;
     [SerializeField] int p_dmg;
 
-    public string a_s_n;
+    [SerializeField] public string a_s_n;
 
     private void Start()
     {
@@ -22,16 +22,11 @@ public class HP : MonoBehaviour
 
     private void playerConfig()
     {
-        p_t_name = this.gameObject.tag;
-
-        if (p_int != 1)
+        if (this.gameObject.name == "Player2")
         {
-            p_int -= 1;
+            p_int = 1;
         }
-        else
-        {
-            p_int += 1;
-        }
+        else p_int = 2;
 
         a_s_n = "AAt_Shot " + p_int;
     }
@@ -40,7 +35,7 @@ public class HP : MonoBehaviour
     {
         if (collider.gameObject.name == a_s_n)
         {
-            p_hp -= p_dmg; 
+            p_hp -= p_dmg;
         }
     }
 

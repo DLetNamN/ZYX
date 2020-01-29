@@ -54,6 +54,8 @@ public class GameManagerScript : MonoBehaviour
         }
 
         currentScene = SceneManager.GetActiveScene().buildIndex;
+
+
     }
 
     public void TimerUI()
