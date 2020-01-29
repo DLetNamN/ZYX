@@ -25,6 +25,11 @@ public class MainMenu : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
 
         StartCoroutine(LoadLevelAsync(sceneIndex));
+
+        GameObject sceneManager = GameObject.FindWithTag("GameController");
+        GameManagerScript gameScript = sceneManager.GetComponent<GameManagerScript>();
+
+        gameScript.mainGameTimer = 300;
     }
 
     public void OptionsScreen()
