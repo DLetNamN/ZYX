@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 7217827900428737240}
   - component: {fileID: 1243405208257745678}
   - component: {fileID: 1243405208257745679}
+  - component: {fileID: 626712717}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player1
@@ -121,7 +122,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bc454100f82698640967b6123d310691, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 86c26a6fd56ad2c44b5c1949baef46dc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -226,6 +227,22 @@ MonoBehaviour:
   chargeSound: {fileID: 1243405208257745678}
   chargingAnim: {fileID: 0}
   bulletSpawnpoint: {fileID: 1243405208332942705}
+--- !u!114 &626712717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217827900428737245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033e6ee31df932847a0ef3c0ac6e7472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p_int: 0
+  p_hp: 0
+  p_dmg: 0
+  a_s_n: 
 --- !u!198 &1243405207987593339
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -9694,11 +9711,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7217827900428737247}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: eaa0e5ae9ece41f41801cf34846c2de2,
-        type: 3}
-      propertyPath: m_Name
-      value: AATModel
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: eaa0e5ae9ece41f41801cf34846c2de2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9768,6 +9780,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 57
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eaa0e5ae9ece41f41801cf34846c2de2,
+        type: 3}
+      propertyPath: m_Name
+      value: AATModel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaa0e5ae9ece41f41801cf34846c2de2, type: 3}

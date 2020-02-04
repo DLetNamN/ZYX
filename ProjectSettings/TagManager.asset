@@ -20,10 +20,10 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
+  - Player1Shot
+  - Player2Shot
+  - Player1
+  - Player2
   - 
   - 
   - 

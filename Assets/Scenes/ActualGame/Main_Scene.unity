@@ -4821,7 +4821,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 096cc1b5deeda2344aaf585cd0ecf551, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.13
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5721,6 +5721,26 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9a211e9d5d4d0734482cd54ec0ac27bb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca34fb2b44dee3c4898b9f4859357c60, type: 3}
+--- !u!1 &1408206801 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7217827900428737245, guid: 33bb4f2fd07251349bb85ea1b0cba469,
+    type: 3}
+  m_PrefabInstance: {fileID: 1243405206324649647}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1408206807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408206801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f121d7419dca834090e0393bc80bcc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Force: 0
+  bullet: {fileID: 0}
 --- !u!1 &1410594363
 GameObject:
   m_ObjectHideFlags: 0
@@ -6719,14 +6739,14 @@ RectTransform:
   m_GameObject: {fileID: 1638247828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 773948463}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 420}
+  m_AnchoredPosition: {x: 0, y: 485.4}
   m_SizeDelta: {x: 720, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638247830
@@ -6784,7 +6804,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 22
+  m_fontStyle: 18
   m_textAlignment: 514
   m_characterSpacing: 15
   m_wordSpacing: 0
@@ -7382,6 +7402,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928049975}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1932466004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5237980299341148298, guid: 18e713a00254c8a4f95b3a9fb7e11904,
+    type: 3}
+  m_PrefabInstance: {fileID: 4457047532748917696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1932466010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932466004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f121d7419dca834090e0393bc80bcc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Force: 0
+  bullet: {fileID: 0}
 --- !u!1 &1943398756 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: d19ac21b61d6be74eb918650f35acc27,
@@ -7787,6 +7827,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 7217827900428737245, guid: 33bb4f2fd07251349bb85ea1b0cba469,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7217827900428737247, guid: 33bb4f2fd07251349bb85ea1b0cba469,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7842,11 +7887,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1243405208257745678, guid: 33bb4f2fd07251349bb85ea1b0cba469,
+    - target: {fileID: 1243405208332942706, guid: 33bb4f2fd07251349bb85ea1b0cba469,
         type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 86c26a6fd56ad2c44b5c1949baef46dc, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660435377381513843, guid: 33bb4f2fd07251349bb85ea1b0cba469,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7986793773610214856, guid: 33bb4f2fd07251349bb85ea1b0cba469,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7986793775491242585, guid: 33bb4f2fd07251349bb85ea1b0cba469,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33bb4f2fd07251349bb85ea1b0cba469, type: 3}
 --- !u!1001 &2117092925502899547
@@ -7935,6 +7995,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 5237980299341148298, guid: 18e713a00254c8a4f95b3a9fb7e11904,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5237980299341148296, guid: 18e713a00254c8a4f95b3a9fb7e11904,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7990,11 +8055,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4457047532839611087, guid: 18e713a00254c8a4f95b3a9fb7e11904,
+    - target: {fileID: 4292183620138659876, guid: 18e713a00254c8a4f95b3a9fb7e11904,
         type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 86c26a6fd56ad2c44b5c1949baef46dc, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457047532979733030, guid: 18e713a00254c8a4f95b3a9fb7e11904,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777512095523919132, guid: 18e713a00254c8a4f95b3a9fb7e11904,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777512095257701005, guid: 18e713a00254c8a4f95b3a9fb7e11904,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e713a00254c8a4f95b3a9fb7e11904, type: 3}
 --- !u!4 &8461021566602246984 stripped

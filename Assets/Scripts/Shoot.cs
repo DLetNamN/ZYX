@@ -18,11 +18,11 @@ public class Shoot : MonoBehaviour
         if (Input.GetButton("Shoot"))
         {
             anim.SetBool("shoot", true);
-            Force *= Time.deltaTime * 60;
+            Force *= 60;
         }
         else
         {
-            anim.SetBool("shoot", false);
+            //anim.SetBool("shoot", false);
             Force = 1;
         }
 
