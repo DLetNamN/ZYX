@@ -30,16 +30,16 @@ namespace AAT.HP
 
             if (this.gameObject.name == "Player1")
             {
-                p_num = 1;
+                p_num = 2;
             }
-            else p_num = 2;
+            else p_num = 1;
 
-            a_s_n = "AAt_Shot " + p_num + "(Clone)";
+            a_s_n = "AAt_Shot " + p_num;
         }
 
         private void OnTriggerEnter(Collider collider)
         {
-            if (collider.gameObject.name != a_s_n)
+            if (collider.gameObject.name == a_s_n)
             {
                 p_hp -= bul_dmg;
                 Destroy(collider.gameObject);
@@ -54,12 +54,12 @@ namespace AAT.HP
         void p_death() 
         { 
             if(p_hp <= 0)
-            {
-                if (this.gameObject.name == "Player1")
-                {
-                    game_mana.playerWhoWon = "Player2";
-                }
-                else game_mana.playerWhoWon = "Player1";
+            { /*Selects who won based upon which gameObject is dying. This happens a split second before the object is destroyed on scene.*/
+                //if (this.gameObject.name == "Player1")
+                //{
+                //    game_mana.playerWhoWon = "Player2";
+                //}
+                //else game_mana.playerWhoWon = "Player1";
 
                 Destroy(this.gameObject);
             }

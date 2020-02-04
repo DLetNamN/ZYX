@@ -71,18 +71,7 @@ public class GameManagerScript : MonoBehaviour
     {
         if (currentScene == 1)
         {
-            if (player1HP < player2HP)
-            {
-                playerWhoWon = "2";
-            }
-            else if (player2HP < player1HP)
-            {
-                playerWhoWon = "1";
-            }
-            else if (player1HP == player2HP)
-            {
-                playerWhoWon = "";
-            }
+            
 
             SceneManager.LoadScene(2);
         }
@@ -93,4 +82,4 @@ public class GameManagerScript : MonoBehaviour
         mainGameTimer -= Time.deltaTime;
     }
 }
-
+    

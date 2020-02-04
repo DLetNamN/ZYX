@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd6f16c2d60015248859db883a9e31ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p_name: Player
+  player_n: 
 --- !u!54 &9218972355630348225
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 8f7aaebdfeac6f14e928ee48b877d07d,
         type: 3}
       propertyPath: m_Name
-      value: AAt_Shot
+      value: AAt_Shot 2
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 8f7aaebdfeac6f14e928ee48b877d07d,
         type: 3}

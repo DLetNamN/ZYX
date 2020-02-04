@@ -18,7 +18,7 @@ public class Shoot : MonoBehaviour
         if (Input.GetButton("Shoot"))
         {
             anim.SetBool("shoot", true);
-            Force *= 60;
+            Force = 60;
         }
         else
         {
@@ -26,9 +26,5 @@ public class Shoot : MonoBehaviour
             Force = 1;
         }
 
-        if (Input.GetButtonUp("Shoot"))
-        {
-            Instantiate(bullet, new Vector3(transform.position.x, transform.position.y + 3, transform.position.z), Quaternion.identity);
-        }
     }
 }
