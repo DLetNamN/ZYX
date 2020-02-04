@@ -34,7 +34,7 @@ namespace AAT.Combat
         {
             if (gameObject.tag == "Player1")
             {
-                chargeTime = Mathf.Clamp(chargeTime, 0, 3);
+                chargeTime = Mathf.Clamp(chargeTime, 0, 3); 
 
                 if (Input.GetButtonUp("Fire1"))
                 {
