@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 1243405208257745678}
   - component: {fileID: 1243405208257745679}
   - component: {fileID: 626712717}
+  - component: {fileID: 1408206807}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player1
@@ -225,8 +226,10 @@ MonoBehaviour:
   chargeTime: 0
   forceMultiplier: 0
   chargeSound: {fileID: 1243405208257745678}
+  blastSound: {fileID: 0}
   chargingAnim: {fileID: 0}
   bulletSpawnpoint: {fileID: 1243405208332942705}
+  transformForceMultiplier: 15
 --- !u!114 &626712717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,10 +242,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 033e6ee31df932847a0ef3c0ac6e7472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p_int: 0
+  p_num: 0
   p_hp: 0
-  p_dmg: 0
+  bul_dmg: 0
   a_s_n: 
+--- !u!114 &1408206807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217827900428737245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f121d7419dca834090e0393bc80bcc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Force: 0
+  bullet: {fileID: 0}
 --- !u!198 &1243405207987593339
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -9711,6 +9728,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7217827900428737247}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: eaa0e5ae9ece41f41801cf34846c2de2,
+        type: 3}
+      propertyPath: m_Name
+      value: AATModel
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: eaa0e5ae9ece41f41801cf34846c2de2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9780,11 +9802,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 57
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: eaa0e5ae9ece41f41801cf34846c2de2,
-        type: 3}
-      propertyPath: m_Name
-      value: AATModel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaa0e5ae9ece41f41801cf34846c2de2, type: 3}

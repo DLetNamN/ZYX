@@ -15,6 +15,7 @@ namespace AAT.Combat
 
         [Header("Animations and Sounds")]
         [SerializeField] AudioSource chargeSound;
+        [SerializeField] AudioSource blastSound;
         [SerializeField] Animator chargingAnim;
 
         [Header("Transforms")]
