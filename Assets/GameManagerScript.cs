@@ -12,7 +12,7 @@ public class GameManagerScript : MonoBehaviour
 
     public float mainGameTimer;
 
-    [SerializeField] string playerWhoWon;
+    public string playerWhoWon;
 
     [SerializeField] int player1HP;
     [SerializeField] int player2HP;
@@ -42,7 +42,6 @@ public class GameManagerScript : MonoBehaviour
         if (currentScene == 1)
         {
             Timer();
-            CheckWhosDead();
 
             if (mainGameTimer <= 0)
             {
@@ -72,18 +71,7 @@ public class GameManagerScript : MonoBehaviour
     {
         if (currentScene == 1)
         {
-            if (player1HP < player2HP)
-            {
-                playerWhoWon = "2";
-            }
-            else if (player2HP < player1HP)
-            {
-                playerWhoWon = "1";
-            }
-            else if (player1HP == player2HP)
-            {
-                playerWhoWon = "";
-            }
+            
 
             SceneManager.LoadScene(2);
         }
@@ -93,16 +81,5 @@ public class GameManagerScript : MonoBehaviour
     {
         mainGameTimer -= Time.deltaTime;
     }
-
-    public void CheckWhosDead()
-    {
-        if (player1HP <= 0)
-        {
-            playerWhoWon = "2";
-        }
-        else if (player2HP <= 0)
-        {
-            playerWhoWon = "1";
-        }
-    }
 }
+    

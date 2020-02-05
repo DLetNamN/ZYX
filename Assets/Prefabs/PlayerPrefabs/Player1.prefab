@@ -57,6 +57,8 @@ GameObject:
   - component: {fileID: 1243405208257745678}
   - component: {fileID: 7217827900428737246}
   - component: {fileID: 1243405208257745679}
+  - component: {fileID: 626712717}
+  - component: {fileID: 1408206807}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player1
@@ -107,7 +109,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bc454100f82698640967b6123d310691, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 86c26a6fd56ad2c44b5c1949baef46dc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -224,8 +226,40 @@ MonoBehaviour:
   chargeTime: 0
   forceMultiplier: 0
   chargeSound: {fileID: 1243405208257745678}
+  blastSound: {fileID: 0}
   chargingAnim: {fileID: 0}
   bulletSpawnpoint: {fileID: 1243405208332942705}
+  transformForceMultiplier: 15
+--- !u!114 &626712717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217827900428737245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033e6ee31df932847a0ef3c0ac6e7472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p_num: 0
+  p_hp: 0
+  bul_dmg: 0
+  a_s_n: 
+--- !u!114 &1408206807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217827900428737245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f121d7419dca834090e0393bc80bcc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Force: 0
+  bullet: {fileID: 0}
 --- !u!198 &1243405207987593339
 ParticleSystem:
   m_ObjectHideFlags: 0
