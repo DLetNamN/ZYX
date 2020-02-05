@@ -11,7 +11,7 @@ namespace AAT.HP
         [SerializeField] public int p_num;
 
         //player medical
-        [SerializeField] int p_hp;
+        [SerializeField] public int p_hp;
         [SerializeField] int bul_dmg;
 
         [SerializeField] public string a_s_n;

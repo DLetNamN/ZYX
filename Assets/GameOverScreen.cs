@@ -13,6 +13,11 @@ public class GameOverScreen : MonoBehaviour
     [Header("Text")]
     public TextMeshPro playerWonText;
 
+    private void Start()
+    {
+        DisplayPlayerWonText();
+    }
+
     public void ReplayGame()
     {
         SceneManager.LoadScene(1);
@@ -30,6 +35,9 @@ public class GameOverScreen : MonoBehaviour
 
     public void DisplayPlayerWonText()
     {
-        
+        GameObject gameManager = GameObject.Find("gameManager");
+        GameManagerScript gameManagerScript = gameManager.GetComponent<GameManagerScript>();
+
+        playerWonText.text = "Player " + gameManagerScript.winner + "won"; 
     }
 }

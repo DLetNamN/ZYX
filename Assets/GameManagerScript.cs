@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using AAT.HP;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] int player2HP;
 
     public TextMeshProUGUI timerText;
+
+    public TextMeshProUGUI winner;
 
     private void Start()
     {
@@ -53,7 +56,7 @@ public class GameManagerScript : MonoBehaviour
 
         currentScene = SceneManager.GetActiveScene().buildIndex;
 
-
+        PlayerIsDead();
     }
 
     public void TimerUI()
@@ -71,8 +74,6 @@ public class GameManagerScript : MonoBehaviour
     {
         if (currentScene == 1)
         {
-            
-
             SceneManager.LoadScene(2);
         }
     }
@@ -81,5 +82,35 @@ public class GameManagerScript : MonoBehaviour
     {
         mainGameTimer -= Time.deltaTime;
     }
+
+    public void PlayerIsDead()
+    {
+        GameObject player1 = GameObject.Find("Player1");
+        HP player1hp = player1.GetComponent<HP>();
+
+        player1HP = player1hp.p_hp;
+
+        GameObject player2 = GameObject.Find("Player2");
+        HP player2hp = player2.GetComponent<HP>();
+
+        player2HP = player2hp.p_hp;
+
+
+        if (player1HP < player2HP)
+        {
+            winner.text = "2";
+        }
+        else if (player2HP < player1HP)
+        {
+            winner.text = "1";
+        }
+
+        if (player1HP <= 0 || player2HP <= 0)
+        {
+            GameObject gameOverPanel = GameObject.Find("GameOverPanel");
+
+            gameOverPanel.SetActive(true);
+        }
+    }
 }
-    
+
