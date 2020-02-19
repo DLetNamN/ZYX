@@ -11,8 +11,8 @@ public class GameOverScreen : MonoBehaviour
     public Button replayButton;
     public Button BackToMenuButton;
     [Header("Text")]
-    public TextMeshPro playerWonText;
-
+    public TextMeshProUGUI playerWonText;
+    public GameManagerScript gamehandlerscript;
     private void Start()
     {
         DisplayPlayerWonText();
@@ -20,12 +20,12 @@ public class GameOverScreen : MonoBehaviour
 
     public void ReplayGame()
     {
-        SceneManager.LoadScene(1);
-
         GameObject sceneManager = GameObject.FindWithTag("GameController");
         GameManagerScript gameScript = sceneManager.GetComponent<GameManagerScript>();
 
         gameScript.mainGameTimer = 300;
+
+        SceneManager.LoadScene(1);
     }
 
     public void BackToMenu()
@@ -35,9 +35,9 @@ public class GameOverScreen : MonoBehaviour
 
     public void DisplayPlayerWonText()
     {
-        GameObject gameManager = GameObject.Find("gameManager");
-        GameManagerScript gameManagerScript = gameManager.GetComponent<GameManagerScript>();
+        GameObject gameManager = GameObject.Find("GameManager");
+        gamehandlerscript = gameManager.GetComponentInChildren<GameManagerScript>();
 
-        playerWonText.text = "Player " + gameManagerScript.winner + "won"; 
+        playerWonText.text = "Player " + gamehandlerscript.winner + "won"; 
     }
 }

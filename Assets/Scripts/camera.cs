@@ -20,14 +20,21 @@ public class camera : MonoBehaviour
 
     private Camera cam;
 
+    GameObject player1, player2;
+
     private void Start()
     {
         cam = GetComponent<Camera>();
 
         cam.orthographicSize = 10;
+
+        player1 = GameObject.Find("Player1");
+        player2 = GameObject.Find("Player2");
     }
     private void FixedUpdate()
     {
+        if (player1 == null || player2 == null) { return; }
+
         if (targets.Count == 0)
             return;
 
@@ -65,6 +72,15 @@ public class camera : MonoBehaviour
     {
         if (targets.Count == 1)
         {
+            List<Transform> newList = new List<Transform>();
+            for (int i = 0; i < targets.Count; i++)
+            {
+                if (targets[i] != null)
+                {
+                    newList.Add(targets[i]);
+                }
+            }
+            targets = newList;
             return targets[0].position;
         }
 
@@ -72,7 +88,10 @@ public class camera : MonoBehaviour
 
         for (int targetsAmount = 0; targetsAmount < targets.Count; targetsAmount++)
         {
-            bounds.Encapsulate(targets[targetsAmount].position);
+            if (targets.Count == 2)
+            {
+                bounds.Encapsulate(targets[targetsAmount].position);
+            }
         }
 
         return bounds.center;

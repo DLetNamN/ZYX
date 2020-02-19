@@ -11,6 +11,9 @@ public class GameManagerScript : MonoBehaviour
 
     public GameObject[] gameManager;
 
+    public GameObject gameOverPanelObj;
+    public GameObject canvasGameObj;
+
     public float mainGameTimer;
 
     public string playerWhoWon;
@@ -20,17 +23,33 @@ public class GameManagerScript : MonoBehaviour
 
     public TextMeshProUGUI timerText;
 
-    public TextMeshProUGUI winner;
+    public string winner;
+
+
 
     private void Start()
     {
         mainGameTimer = 300;
+
+        GameObject mainCanvas = GameObject.Find("Canvas");
+        TextMeshProUGUI playerWonText = mainCanvas.GetComponent<TextMeshProUGUI>();
+
+        if (mainCanvas == null) { return; }
+
+        if (mainCanvas != null)
+        {
+            if (playerWonText != null)
+            {
+                playerWonText.text = winner;
+            }
+        }
+
+        canvasGameObj = GameObject.Find("Canvas");
     }
 
     private void Awake()
     {
         gameManager = GameObject.FindGameObjectsWithTag("GameController");
-
 
         if (gameManager.Length > 1)
         {
@@ -74,7 +93,7 @@ public class GameManagerScript : MonoBehaviour
     {
         if (currentScene == 1)
         {
-            SceneManager.LoadScene(2);
+            if (mainGameTimer <= 0) { EnableGameOverPanel(); }
         }
     }
 
@@ -86,31 +105,44 @@ public class GameManagerScript : MonoBehaviour
     public void PlayerIsDead()
     {
         GameObject player1 = GameObject.Find("Player1");
-        HP player1hp = player1.GetComponent<HP>();
 
-        player1HP = player1hp.p_hp;
+        if (player1 == null) { return; }
+        else
+        {
+            HP player1hp = player1.GetComponent<HP>();
+            player1HP = player1hp.p_hp;
+        }
+
 
         GameObject player2 = GameObject.Find("Player2");
-        HP player2hp = player2.GetComponent<HP>();
 
-        player2HP = player2hp.p_hp;
-
+        if (player2 == null) { return; }
+        else
+        {
+            HP player2hp = player2.GetComponent<HP>();
+            player2HP = player2hp.p_hp;
+        }
 
         if (player1HP < player2HP)
         {
-            winner.text = "2";
+            winner = "2";
         }
         else if (player2HP < player1HP)
         {
-            winner.text = "1";
+            winner = "1";
         }
 
         if (player1HP <= 0 || player2HP <= 0)
         {
-            GameObject gameOverPanel = GameObject.Find("GameOverPanel");
-
-            gameOverPanel.SetActive(true);
+            EnableGameOverPanel();
         }
+        
+    }
+
+    public void EnableGameOverPanel()
+    {
+        GameObject panelObj = Instantiate(gameOverPanelObj, new Vector3(0, 0, 0), Quaternion.identity);
+        panelObj.transform.SetParent(canvasGameObj.transform);
     }
 }
 

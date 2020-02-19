@@ -10,6 +10,8 @@ TagManager:
   - Player2
   - 1
   - 2
+  - GameOverPanel
+  - Canvas
   layers:
   - Default
   - TransparentFX

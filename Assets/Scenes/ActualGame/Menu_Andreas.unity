@@ -2894,11 +2894,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScene: 0
   gameManager: []
+  gameOverPanelObj: {fileID: 2722537597831320757, guid: 33c465108b638a243b2d49cfb91d3729,
+    type: 3}
+  canvasGameObj: {fileID: 0}
   mainGameTimer: 0
   playerWhoWon: 
   player1HP: 0
   player2HP: 0
   timerText: {fileID: 0}
+  winner: 
 --- !u!4 &908977916
 Transform:
   m_ObjectHideFlags: 0
